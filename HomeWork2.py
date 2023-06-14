@@ -70,17 +70,30 @@
 
 #   Пример: ноутбук  12      
 
-eng = {1:'AEIOULNSTR', 2:'DG', 3:'BCMP', 4:'FHVWY', 5:'K', 8:'JZ', 10:'QZ'}
-rus = {1:'АВЕИНОРСТ', 2:'ДКЛМПУ', 3:'БГЁЬЯ', 4:'ЙЫ', 5:'ЖЗХЦЧ', 8:'ШЭЮ', 10:'ФЩЪ'}
-word = input('Введите слово: ').upper()
-count = 0
-for i in word:
-    if i in 'qwertyuiopasdfghjklzxcvbnm'.upper():
-        for j in eng:
-            if i in eng[j]:
-                count += j
-    else:
-        for j in rus:
-            if i in rus[j]:
-                count += j
-print(count)
+# eng = {1:'AEIOULNSTR', 2:'DG', 3:'BCMP', 4:'FHVWY', 5:'K', 8:'JZ', 10:'QZ'}
+# rus = {1:'АВЕИНОРСТ', 2:'ДКЛМПУ', 3:'БГЁЬЯ', 4:'ЙЫ', 5:'ЖЗХЦЧ', 8:'ШЭЮ', 10:'ФЩЪ'}
+# word = input('Введите слово: ').upper()
+# count = 0
+# for i in word:
+#     if i in 'qwertyuiopasdfghjklzxcvbnm'.upper():
+#         for j in eng:
+#             if i in eng[j]:
+#                 count += j
+#     else:
+#         for j in rus:
+#             if i in rus[j]:
+#                 count += j
+# print(count)
+# 
+# ДОМАШНЯЯ РАБОТА К СЕМИНАРУ 5
+# Задача 26:  Напишите программу, которая на вход принимает два числа A и B, и 
+# возводит число А в целую степень B с помощью рекурсии.
+
+def degree(a, b):
+    if b == 0:
+        return 1
+    return a * degree(a, b - 1)
+
+a = int(input('Введите число: '))
+b = int(input('Введите степень: '))
+print(degree(a, b))
